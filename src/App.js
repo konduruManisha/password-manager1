@@ -4,7 +4,7 @@ import './App.css'
 
 const colorList = ['yellow', 'green', 'orange', 'brown', 'blue']
 class App extends Component {
-    state {
+    state = {
         isTrue: false;
         latestList: [],
         website: '',
@@ -45,19 +45,19 @@ class App extends Component {
     }
     showPassword = e => {
         if (e.target.checked) {
-            this.setState({isShow; true})
+            this.setState({isShow: true})
         } else {
             this.setState({isShow: false})
         }
-        }
-        searchList = e => {
-            this.setState({searchInput: e.target.value})
-        }
+    }
+     searchList = e => {
+        this.setState({searchInput: e.target.value})
+     }
         deleteItem = id => {
             const {latestList} = this.state
             const newList = latestList.filter(eachValue => eachValue.id !== id)
             const caseOf = newList.length !== 0
-            this.setState({ newList, isTrue: caseOf})
+            this.setState({latestList: newList, isTrue: caseOf})
         }
         render() {
             const {
@@ -219,8 +219,7 @@ class App extends Component {
                                             />
                                         </button>
                                     </li>
-
-                                ))}
+                                                                         ))}
                             </ul>
                         )}
                     </div>
